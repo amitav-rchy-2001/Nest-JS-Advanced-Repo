@@ -10,7 +10,6 @@ export type EventSource =
   | 'cron'
   | 'unknown';
 
-
 export interface AppEvent<TPayload = unknown> {
   id: string;
   name: string;
@@ -27,22 +26,16 @@ export interface PublishEventOptions {
   requestId?: string;
 }
 
-/**
- * 1. Email
- */
+export type NotificationChannel = 'IN_APP' | 'EMAIL' | 'PUSH' | 'SOCKET' | 'SMS';
+
 export interface EmailSendRequestedPayload {
   to: string | string[];
   subject: string;
-  template?: string;
   text?: string;
   html?: string;
+  template?: string;
   data?: Record<string, unknown>;
 }
-
-/**
- * 2. Notification
- */
-export type NotificationChannel = 'IN_APP' | 'EMAIL' | 'PUSH' | 'SOCKET' | 'SMS';
 
 export interface NotificationCreateRequestedPayload {
   userId: string;
@@ -53,9 +46,6 @@ export interface NotificationCreateRequestedPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 3. Messaging / Chat
- */
 export interface MessageSentPayload {
   conversationId: string;
   senderId: string;
@@ -65,9 +55,12 @@ export interface MessageSentPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 4. Audit Log
- */
+export interface MessageReadPayload {
+  messageId: string;
+  userId: string;
+  conversationId: string;
+}
+
 export interface AuditLogRequestedPayload {
   action: string;
   entity: string;
@@ -80,9 +73,6 @@ export interface AuditLogRequestedPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 5. Activity Log / Timeline
- */
 export interface ActivityLogRequestedPayload {
   userId?: string;
   title: string;
@@ -92,9 +82,6 @@ export interface ActivityLogRequestedPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 6. Queue Event
- */
 export interface QueueJobRequestedPayload {
   queueName: string;
   jobName: string;
@@ -103,18 +90,12 @@ export interface QueueJobRequestedPayload {
   attempts?: number;
 }
 
-/**
- * 7. WebSocket Event
- */
 export interface WebsocketEmitRequestedPayload {
   room: string;
   event: string;
   data: Record<string, unknown>;
 }
 
-/**
- * 8. Webhook Event
- */
 export interface WebhookDispatchRequestedPayload {
   url: string;
   event: string;
@@ -123,9 +104,6 @@ export interface WebhookDispatchRequestedPayload {
   secret?: string;
 }
 
-/**
- * 9. File Processing Event
- */
 export interface FileProcessRequestedPayload {
   fileId: string;
   filePath: string;
@@ -134,9 +112,6 @@ export interface FileProcessRequestedPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 10. Security Event
- */
 export interface SecurityEventPayload {
   userId?: string;
   email?: string;
@@ -146,9 +121,6 @@ export interface SecurityEventPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 11. Admin/System Alert Event
- */
 export interface SystemAlertPayload {
   title: string;
   message: string;
@@ -156,28 +128,20 @@ export interface SystemAlertPayload {
   metadata?: Record<string, unknown>;
 }
 
-/**
- * 12. Cache Invalidation
- */
 export interface CacheInvalidateRequestedPayload {
   key?: string;
   pattern?: string;
   tags?: string[];
 }
 
-/**
- * 13. Search Indexing
- */
 export interface SearchIndexRequestedPayload {
   indexName: string;
   entity: string;
   entityId: string;
+  operation?: 'INDEX' | 'UPDATE' | 'DELETE';
   data?: Record<string, unknown>;
 }
 
-/**
- * 14. Reminder / Schedule
- */
 export interface ReminderScheduleRequestedPayload {
   userId: string;
   title: string;

@@ -15,3 +15,217 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  entity    String
+  entityId  String?
+  userId    String?
+
+  oldValue  Json?
+  newValue  Json?
+  metadata  Json?
+
+  ipAddress String?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+
+  @@index([action])
+  @@index([entity])
+  @@index([entityId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model ActivityLog {
+  id          String   @id @default(uuid())
+  userId      String?
+  title       String
+  description String?
+  entity      String
+  entityId    String?
+  metadata    Json?
+
+  createdAt   DateTime @default(now())
+
+  @@index([userId])
+  @@index([entity])
+  @@index([entityId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String    @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  type      String?
+  channels  String[]
+  metadata  Json?
+
+  isRead    Boolean   @default(false)
+  readAt    DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+}
+
+model WebhookDelivery {
+  id                 String   @id @default(uuid())
+  url                String
+  event              String
+  payload            Json
+  headers            Json?
+  status             String   @default("PENDING")
+  responseStatusCode Int?
+  responseBody       String?
+  error              String?
+  attempts           Int      @default(0)
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  deliveredAt        DateTime?
+
+  @@index([event])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model FileProcessingJob {
+  id          String   @id @default(uuid())
+  fileId      String
+  filePath    String
+  mimeType    String
+  action      String
+  status      String   @default("PENDING")
+  error       String?
+  metadata    Json?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  processedAt DateTime?
+
+  @@index([fileId])
+  @@index([action])
+  @@index([status])
+}
+
+model Reminder {
+  id        String    @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  remindAt  DateTime
+  channels  String[]
+  status    String    @default("SCHEDULED")
+  metadata  Json?
+  sentAt    DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([remindAt])
+  @@index([status])
+}
+
+model SystemAlert {
+  id        String    @id @default(uuid())
+  title     String
+  message   String
+  severity  String
+  status    String    @default("OPEN")
+  metadata  Json?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  resolvedAt DateTime?
+
+  @@index([severity])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model SearchIndexJob {
+  id        String   @id @default(uuid())
+  indexName String
+  entity    String
+  entityId  String
+  operation String
+  data      Json?
+  status    String   @default("PENDING")
+  error     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([indexName])
+  @@index([entity])
+  @@index([entityId])
+  @@index([status])
+}
+
+model Conversation {
+  id        String   @id @default(uuid())
+  type      String   @default("DIRECT")
+  title     String?
+  metadata  Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  participants ConversationParticipant[]
+  messages     Message[]
+}
+
+model ConversationParticipant {
+  id             String   @id @default(uuid())
+  conversationId String
+  userId         String
+  role           String   @default("MEMBER")
+
+  createdAt      DateTime @default(now())
+
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@unique([conversationId, userId])
+  @@index([userId])
+}
+
+model Message {
+  id             String   @id @default(uuid())
+  conversationId String
+  senderId       String
+  content        String?
+  attachments    Json?
+  metadata       Json?
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  deletedAt      DateTime?
+
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  readReceipts   MessageReadReceipt[]
+
+  @@index([conversationId])
+  @@index([senderId])
+  @@index([createdAt])
+}
+
+model MessageReadReceipt {
+  id        String   @id @default(uuid())
+  messageId String
+  userId    String
+  readAt    DateTime @default(now())
+
+  message   Message @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@unique([messageId, userId])
+  @@index([userId])
+}
