@@ -13,6 +13,7 @@ import { FileProcessingModule } from '../file-processing/file-processing.module'
 import { SearchModule } from '../search/search.module';
 import { ReminderModule } from '../reminder/reminder.module';
 import { SystemAlertModule } from '../system-alert/system-alert.module';
+import { NotificationModule } from '../notification/notification.module';
 
 import { EmailEventHandler } from './handlers/email-event.handler';
 import { NotificationEventHandler } from './handlers/notification-event.handler';
@@ -51,7 +52,8 @@ import { ReminderEventHandler } from './handlers/reminder-event.handler';
     FileProcessingModule,
     SearchModule,
     ReminderModule,
-    SystemAlertModule
+    SystemAlertModule,
+    NotificationModule,
   ],
   providers: [
     AppEventPublisher,
