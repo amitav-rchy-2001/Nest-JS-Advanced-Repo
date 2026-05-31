@@ -25,7 +25,11 @@ export class QueueDispatchService {
     private readonly reminderQueue: Queue,
   ) {}
 
-  async addEmailJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addEmailJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.emailQueue.add(jobName, data, {
       attempts: 3,
       backoff: { type: 'exponential', delay: 3000 },
@@ -35,7 +39,11 @@ export class QueueDispatchService {
     });
   }
 
-  async addWebsocketJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addWebsocketJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.websocketQueue.add(jobName, data, {
       attempts: 2,
       removeOnComplete: true,
@@ -44,7 +52,11 @@ export class QueueDispatchService {
     });
   }
 
-  async addWebhookJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addWebhookJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.webhookQueue.add(jobName, data, {
       attempts: 5,
       backoff: { type: 'exponential', delay: 5000 },
@@ -54,7 +66,11 @@ export class QueueDispatchService {
     });
   }
 
-  async addFileProcessingJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addFileProcessingJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.fileProcessingQueue.add(jobName, data, {
       attempts: 3,
       backoff: { type: 'exponential', delay: 3000 },
@@ -64,7 +80,11 @@ export class QueueDispatchService {
     });
   }
 
-  async addSearchJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addSearchJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.searchQueue.add(jobName, data, {
       attempts: 3,
       backoff: { type: 'exponential', delay: 3000 },
@@ -74,7 +94,11 @@ export class QueueDispatchService {
     });
   }
 
-  async addReminderJob(jobName: string, data: Record<string, unknown>, options?: JobsOptions) {
+  async addReminderJob(
+    jobName: string,
+    data: Record<string, unknown>,
+    options?: JobsOptions,
+  ) {
     return this.reminderQueue.add(jobName, data, {
       attempts: 3,
       removeOnComplete: true,

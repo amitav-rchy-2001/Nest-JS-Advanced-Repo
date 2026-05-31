@@ -14,7 +14,10 @@ export class EmailEventHandler {
   async handleEmailSendRequested(
     event: AppEvent<EmailSendRequestedPayload>,
   ): Promise<void> {
-    await this.queueDispatchService.addEmailJob('send-email', event.payload as unknown as Record<string, unknown>);
+    await this.queueDispatchService.addEmailJob(
+      'send-email',
+      event.payload as unknown as Record<string, unknown>,
+    );
 
     this.logger.log(`Email job queued for: ${event.payload.to}`);
   }

@@ -69,14 +69,14 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('Backend Template API')
-    .setDescription('Professional NestJS backend template API documentation.')
+    .setTitle('NannyApp Backend API')
+    .setDescription('Mobile-first parent and nanny platform API documentation.')
     .setVersion('1.0.0')
     .addBearerAuth()
     .build();
   const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api/v1/docs', app, swaggerDocument, {
-    customSiteTitle: 'Backend Template API Docs',
+    customSiteTitle: 'NannyApp API Docs',
     swaggerOptions: {
       persistAuthorization: true,
     },

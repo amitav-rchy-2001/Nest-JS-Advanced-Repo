@@ -27,9 +27,7 @@ export class SystemAlertEventHandler {
   }
 
   @OnEvent(APP_EVENTS.SYSTEM_ALERT.QUEUE_FAILED)
-  async handleQueueFailed(
-    event: AppEvent<SystemAlertPayload>,
-  ): Promise<void> {
+  async handleQueueFailed(event: AppEvent<SystemAlertPayload>): Promise<void> {
     const alert = await this.systemAlertService.create(event.payload);
     this.logger.error(`Queue failure alert created: ${alert.id}`);
   }

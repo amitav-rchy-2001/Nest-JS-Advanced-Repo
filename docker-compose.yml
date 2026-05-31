@@ -1,12 +1,12 @@
 services:
   postgres:
     image: postgres:16
-    container_name: backend_template_postgres
+    container_name: evaturner_postgres
     restart: always
     ports:
-      - "5434:5432"
+      - "5435:5432"
     environment:
-      POSTGRES_DB: backend_template
+      POSTGRES_DB: evaturner-backend
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
@@ -14,7 +14,7 @@ services:
 
   redis:
     image: redis:7
-    container_name: backend_template_redis
+    container_name: evaturner_redis
     restart: always
     ports:
       - "6379:6379"

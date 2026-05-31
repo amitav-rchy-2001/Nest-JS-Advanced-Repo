@@ -116,7 +116,7 @@ JWT_REFRESH_EXPIRES_IN=7d
 BCRYPT_SALT_ROUNDS=12
 
 REDIS_HOST=localhost
-REDIS_PORT=6379
+REDIS_PORT=6377
 ```
 
 Mail is supported by `MailService`, but SMTP variables are optional in the validation schema. Add these when you want real email delivery:
@@ -2507,7 +2507,7 @@ Check env:
 
 ```env
 REDIS_HOST=localhost
-REDIS_PORT=6379
+REDIS_PORT=6377
 ```
 
 Also confirm the processor class is provided from its module.

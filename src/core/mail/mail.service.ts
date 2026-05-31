@@ -42,7 +42,9 @@ export class MailService {
     return result;
   }
 
-  private renderTemplate(payload: EmailSendRequestedPayload): string | undefined {
+  private renderTemplate(
+    payload: EmailSendRequestedPayload,
+  ): string | undefined {
     if (!payload.template) {
       return payload.html;
     }

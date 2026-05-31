@@ -1,7 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { APP_EVENTS } from '../app-event.constants';
-import type { AppEvent, CacheInvalidateRequestedPayload } from '../app-event.types';
+import type {
+  AppEvent,
+  CacheInvalidateRequestedPayload,
+} from '../app-event.types';
 import { RedisService } from '../../redis/redis.service';
 
 @Injectable()
@@ -23,7 +26,9 @@ export class CacheEventHandler {
 
     if (payload.pattern) {
       const deleted = await this.redisService.deleteByPattern(payload.pattern);
-      this.logger.log(`Cache pattern deleted: ${payload.pattern}, count: ${deleted}`);
+      this.logger.log(
+        `Cache pattern deleted: ${payload.pattern}, count: ${deleted}`,
+      );
     }
 
     if (payload.tags?.length) {

@@ -21,7 +21,10 @@ export class FileProcessingProcessor extends WorkerHost {
     this.logger.log(`Processing file job: ${job.id}`);
 
     try {
-      await this.fileProcessingService.process(job.data.processingJobId, job.data);
+      await this.fileProcessingService.process(
+        job.data.processingJobId,
+        job.data,
+      );
     } catch (error) {
       await this.fileProcessingService.markFailed(
         job.data.processingJobId,
