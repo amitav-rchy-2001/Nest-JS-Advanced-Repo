@@ -1,7 +1,11 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { APP_EVENTS } from '../app-event.constants';
-import type { AppEvent, MessageReadPayload, MessageSentPayload } from '../app-event.types';
+import type {
+  AppEvent,
+  MessageReadPayload,
+  MessageSentPayload,
+} from '../app-event.types';
 import { NotificationService } from '../../notification/notification.service';
 import { QueueDispatchService } from '../../queue/queue-dispatch.service';
 

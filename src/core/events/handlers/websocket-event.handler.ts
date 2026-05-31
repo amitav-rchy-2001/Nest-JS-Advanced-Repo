@@ -1,7 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { APP_EVENTS } from '../app-event.constants';
-import type { AppEvent, WebsocketEmitRequestedPayload } from '../app-event.types';
+import type {
+  AppEvent,
+  WebsocketEmitRequestedPayload,
+} from '../app-event.types';
 import { QueueDispatchService } from '../../queue/queue-dispatch.service';
 
 @Injectable()

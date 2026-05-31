@@ -26,7 +26,12 @@ export interface PublishEventOptions {
   requestId?: string;
 }
 
-export type NotificationChannel = 'IN_APP' | 'EMAIL' | 'PUSH' | 'SOCKET' | 'SMS';
+export type NotificationChannel =
+  | 'IN_APP'
+  | 'EMAIL'
+  | 'PUSH'
+  | 'SOCKET'
+  | 'SMS';
 
 export interface EmailSendRequestedPayload {
   to: string | string[];
@@ -108,7 +113,12 @@ export interface FileProcessRequestedPayload {
   fileId: string;
   filePath: string;
   mimeType: string;
-  action: 'IMAGE_RESIZE' | 'CSV_IMPORT' | 'PDF_PARSE' | 'VIDEO_THUMBNAIL' | 'VIRUS_SCAN';
+  action:
+    | 'IMAGE_RESIZE'
+    | 'CSV_IMPORT'
+    | 'PDF_PARSE'
+    | 'VIDEO_THUMBNAIL'
+    | 'VIRUS_SCAN';
   metadata?: Record<string, unknown>;
 }
 

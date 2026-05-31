@@ -6,15 +6,30 @@ import Redis from 'ioredis';
 export class RedisService implements OnModuleDestroy {
   private readonly logger = new Logger(RedisService.name);
   private readonly client: Redis;
+  private hasLoggedConnectionError = false;
 
   constructor(private readonly configService: ConfigService) {
     this.client = new Redis({
       host: this.configService.get<string>('REDIS_HOST', 'localhost'),
       port: this.configService.get<number>('REDIS_PORT', 6379),
+      maxRetriesPerRequest: 1,
+      retryStrategy: (attempt) => Math.min(attempt * 200, 2_000),
     });
 
-    this.client.on('connect', () => this.logger.log('Redis connected'));
-    this.client.on('error', (error) => this.logger.error(error.message));
+    this.client.on('connect', () => {
+      this.hasLoggedConnectionError = false;
+      this.logger.log('Redis connected');
+    });
+    this.client.on('error', (error) => {
+      if (this.hasLoggedConnectionError) {
+        return;
+      }
+
+      this.hasLoggedConnectionError = true;
+      this.logger.error(
+        `${error.message}. Start Redis or update REDIS_HOST/REDIS_PORT.`,
+      );
+    });
   }
 
   getClient() {

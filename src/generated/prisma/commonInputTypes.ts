@@ -304,6 +304,254 @@ export type IntWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedIntFilter<$PrismaModel>
 }
 
+export type EnumUserRoleFilter<$PrismaModel = never> = {
+  equals?: $Enums.UserRole | Prisma.EnumUserRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumUserRoleFilter<$PrismaModel> | $Enums.UserRole
+}
+
+export type EnumUserRoleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.UserRole | Prisma.EnumUserRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumUserRoleWithAggregatesFilter<$PrismaModel> | $Enums.UserRole
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumUserRoleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumUserRoleFilter<$PrismaModel>
+}
+
+export type EnumLanguageCodeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel> | $Enums.LanguageCode | null
+}
+
+export type EnumNannyStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.NannyStatus | Prisma.EnumNannyStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel> | $Enums.NannyStatus
+}
+
+export type EnumLanguageCodeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumLanguageCodeNullableWithAggregatesFilter<$PrismaModel> | $Enums.LanguageCode | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel>
+}
+
+export type EnumNannyStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.NannyStatus | Prisma.EnumNannyStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumNannyStatusWithAggregatesFilter<$PrismaModel> | $Enums.NannyStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel>
+}
+
+export type EnumChildAgeRangeFilter<$PrismaModel = never> = {
+  equals?: $Enums.ChildAgeRange | Prisma.EnumChildAgeRangeFieldRefInput<$PrismaModel>
+  in?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel> | $Enums.ChildAgeRange
+}
+
+export type EnumChildAgeRangeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ChildAgeRange | Prisma.EnumChildAgeRangeFieldRefInput<$PrismaModel>
+  in?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumChildAgeRangeWithAggregatesFilter<$PrismaModel> | $Enums.ChildAgeRange
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel>
+}
+
+export type EnumLanguageCodeFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel>
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel> | $Enums.LanguageCode
+}
+
+export type EnumLanguageCodeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel>
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLanguageCodeWithAggregatesFilter<$PrismaModel> | $Enums.LanguageCode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel>
+}
+
+export type EnumDocumentTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentType | Prisma.EnumDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel> | $Enums.DocumentType
+}
+
+export type EnumDocumentSideNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentSide | Prisma.EnumDocumentSideFieldRefInput<$PrismaModel> | null
+  in?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel> | $Enums.DocumentSide | null
+}
+
+export type EnumDocStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocStatus | Prisma.EnumDocStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocStatusFilter<$PrismaModel> | $Enums.DocStatus
+}
+
+export type EnumDocumentTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentType | Prisma.EnumDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocumentTypeWithAggregatesFilter<$PrismaModel> | $Enums.DocumentType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel>
+}
+
+export type EnumDocumentSideNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentSide | Prisma.EnumDocumentSideFieldRefInput<$PrismaModel> | null
+  in?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumDocumentSideNullableWithAggregatesFilter<$PrismaModel> | $Enums.DocumentSide | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel>
+}
+
+export type EnumDocStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocStatus | Prisma.EnumDocStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocStatusWithAggregatesFilter<$PrismaModel> | $Enums.DocStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocStatusFilter<$PrismaModel>
+}
+
+export type EnumOtpTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.OtpType | Prisma.EnumOtpTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel> | $Enums.OtpType
+}
+
+export type EnumOtpTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OtpType | Prisma.EnumOtpTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOtpTypeWithAggregatesFilter<$PrismaModel> | $Enums.OtpType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel>
+}
+
+export type EnumResetViaFilter<$PrismaModel = never> = {
+  equals?: $Enums.ResetVia | Prisma.EnumResetViaFieldRefInput<$PrismaModel>
+  in?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumResetViaFilter<$PrismaModel> | $Enums.ResetVia
+}
+
+export type EnumResetViaWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ResetVia | Prisma.EnumResetViaFieldRefInput<$PrismaModel>
+  in?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumResetViaWithAggregatesFilter<$PrismaModel> | $Enums.ResetVia
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumResetViaFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumResetViaFilter<$PrismaModel>
+}
+
+export type DecimalFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type EnumBillingCycleFilter<$PrismaModel = never> = {
+  equals?: $Enums.BillingCycle | Prisma.EnumBillingCycleFieldRefInput<$PrismaModel>
+  in?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel> | $Enums.BillingCycle
+}
+
+export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalWithAggregatesFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _sum?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _min?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _max?: Prisma.NestedDecimalFilter<$PrismaModel>
+}
+
+export type EnumBillingCycleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.BillingCycle | Prisma.EnumBillingCycleFieldRefInput<$PrismaModel>
+  in?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumBillingCycleWithAggregatesFilter<$PrismaModel> | $Enums.BillingCycle
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel>
+}
+
+export type EnumSubscriptionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionStatus | Prisma.EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel> | $Enums.SubscriptionStatus
+}
+
+export type EnumSubscriptionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionStatus | Prisma.EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel>
+}
+
+export type EnumPaymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
+}
+
+export type EnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.PaymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -551,6 +799,254 @@ export type NestedFloatFilter<$PrismaModel = never> = {
   gt?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   gte?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   not?: Prisma.NestedFloatFilter<$PrismaModel> | number
+}
+
+export type NestedEnumUserRoleFilter<$PrismaModel = never> = {
+  equals?: $Enums.UserRole | Prisma.EnumUserRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumUserRoleFilter<$PrismaModel> | $Enums.UserRole
+}
+
+export type NestedEnumUserRoleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.UserRole | Prisma.EnumUserRoleFieldRefInput<$PrismaModel>
+  in?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.UserRole[] | Prisma.ListEnumUserRoleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumUserRoleWithAggregatesFilter<$PrismaModel> | $Enums.UserRole
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumUserRoleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumUserRoleFilter<$PrismaModel>
+}
+
+export type NestedEnumLanguageCodeNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel> | $Enums.LanguageCode | null
+}
+
+export type NestedEnumNannyStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.NannyStatus | Prisma.EnumNannyStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel> | $Enums.NannyStatus
+}
+
+export type NestedEnumLanguageCodeNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumLanguageCodeNullableWithAggregatesFilter<$PrismaModel> | $Enums.LanguageCode | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLanguageCodeNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumNannyStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.NannyStatus | Prisma.EnumNannyStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.NannyStatus[] | Prisma.ListEnumNannyStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumNannyStatusWithAggregatesFilter<$PrismaModel> | $Enums.NannyStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumNannyStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumChildAgeRangeFilter<$PrismaModel = never> = {
+  equals?: $Enums.ChildAgeRange | Prisma.EnumChildAgeRangeFieldRefInput<$PrismaModel>
+  in?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel> | $Enums.ChildAgeRange
+}
+
+export type NestedEnumChildAgeRangeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ChildAgeRange | Prisma.EnumChildAgeRangeFieldRefInput<$PrismaModel>
+  in?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ChildAgeRange[] | Prisma.ListEnumChildAgeRangeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumChildAgeRangeWithAggregatesFilter<$PrismaModel> | $Enums.ChildAgeRange
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumChildAgeRangeFilter<$PrismaModel>
+}
+
+export type NestedEnumLanguageCodeFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel>
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel> | $Enums.LanguageCode
+}
+
+export type NestedEnumLanguageCodeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.LanguageCode | Prisma.EnumLanguageCodeFieldRefInput<$PrismaModel>
+  in?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.LanguageCode[] | Prisma.ListEnumLanguageCodeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumLanguageCodeWithAggregatesFilter<$PrismaModel> | $Enums.LanguageCode
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumLanguageCodeFilter<$PrismaModel>
+}
+
+export type NestedEnumDocumentTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentType | Prisma.EnumDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel> | $Enums.DocumentType
+}
+
+export type NestedEnumDocumentSideNullableFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentSide | Prisma.EnumDocumentSideFieldRefInput<$PrismaModel> | null
+  in?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel> | $Enums.DocumentSide | null
+}
+
+export type NestedEnumDocStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocStatus | Prisma.EnumDocStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocStatusFilter<$PrismaModel> | $Enums.DocStatus
+}
+
+export type NestedEnumDocumentTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentType | Prisma.EnumDocumentTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocumentType[] | Prisma.ListEnumDocumentTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocumentTypeWithAggregatesFilter<$PrismaModel> | $Enums.DocumentType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocumentTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumDocumentSideNullableWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocumentSide | Prisma.EnumDocumentSideFieldRefInput<$PrismaModel> | null
+  in?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  notIn?: $Enums.DocumentSide[] | Prisma.ListEnumDocumentSideFieldRefInput<$PrismaModel> | null
+  not?: Prisma.NestedEnumDocumentSideNullableWithAggregatesFilter<$PrismaModel> | $Enums.DocumentSide | null
+  _count?: Prisma.NestedIntNullableFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocumentSideNullableFilter<$PrismaModel>
+}
+
+export type NestedEnumDocStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.DocStatus | Prisma.EnumDocStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.DocStatus[] | Prisma.ListEnumDocStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumDocStatusWithAggregatesFilter<$PrismaModel> | $Enums.DocStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumDocStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumDocStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumOtpTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.OtpType | Prisma.EnumOtpTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel> | $Enums.OtpType
+}
+
+export type NestedEnumOtpTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OtpType | Prisma.EnumOtpTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OtpType[] | Prisma.ListEnumOtpTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOtpTypeWithAggregatesFilter<$PrismaModel> | $Enums.OtpType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOtpTypeFilter<$PrismaModel>
+}
+
+export type NestedEnumResetViaFilter<$PrismaModel = never> = {
+  equals?: $Enums.ResetVia | Prisma.EnumResetViaFieldRefInput<$PrismaModel>
+  in?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumResetViaFilter<$PrismaModel> | $Enums.ResetVia
+}
+
+export type NestedEnumResetViaWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.ResetVia | Prisma.EnumResetViaFieldRefInput<$PrismaModel>
+  in?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  notIn?: $Enums.ResetVia[] | Prisma.ListEnumResetViaFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumResetViaWithAggregatesFilter<$PrismaModel> | $Enums.ResetVia
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumResetViaFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumResetViaFilter<$PrismaModel>
+}
+
+export type NestedDecimalFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+}
+
+export type NestedEnumBillingCycleFilter<$PrismaModel = never> = {
+  equals?: $Enums.BillingCycle | Prisma.EnumBillingCycleFieldRefInput<$PrismaModel>
+  in?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel> | $Enums.BillingCycle
+}
+
+export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  in?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  notIn?: runtime.Decimal[] | runtime.DecimalJsLike[] | number[] | string[] | Prisma.ListDecimalFieldRefInput<$PrismaModel>
+  lt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  lte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gt?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  gte?: runtime.Decimal | runtime.DecimalJsLike | number | string | Prisma.DecimalFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedDecimalWithAggregatesFilter<$PrismaModel> | runtime.Decimal | runtime.DecimalJsLike | number | string
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _avg?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _sum?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _min?: Prisma.NestedDecimalFilter<$PrismaModel>
+  _max?: Prisma.NestedDecimalFilter<$PrismaModel>
+}
+
+export type NestedEnumBillingCycleWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.BillingCycle | Prisma.EnumBillingCycleFieldRefInput<$PrismaModel>
+  in?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  notIn?: $Enums.BillingCycle[] | Prisma.ListEnumBillingCycleFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumBillingCycleWithAggregatesFilter<$PrismaModel> | $Enums.BillingCycle
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumBillingCycleFilter<$PrismaModel>
+}
+
+export type NestedEnumSubscriptionStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionStatus | Prisma.EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel> | $Enums.SubscriptionStatus
+}
+
+export type NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.SubscriptionStatus | Prisma.EnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.SubscriptionStatus[] | Prisma.ListEnumSubscriptionStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumSubscriptionStatusWithAggregatesFilter<$PrismaModel> | $Enums.SubscriptionStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumSubscriptionStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumPaymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel> | $Enums.PaymentStatus
+}
+
+export type NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.PaymentStatus | Prisma.EnumPaymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.PaymentStatus[] | Prisma.ListEnumPaymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumPaymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.PaymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumPaymentStatusFilter<$PrismaModel>
 }
 
 

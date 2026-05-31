@@ -59,31 +59,36 @@ export class FileProcessingService {
       case 'IMAGE_RESIZE':
         return {
           action: payload.action,
-          message: 'Image resize action executed. Add sharp package for real resizing.',
+          message:
+            'Image resize action executed. Add sharp package for real resizing.',
         };
 
       case 'CSV_IMPORT':
         return {
           action: payload.action,
-          message: 'CSV import action executed. Add csv-parser based importer for real import.',
+          message:
+            'CSV import action executed. Add csv-parser based importer for real import.',
         };
 
       case 'PDF_PARSE':
         return {
           action: payload.action,
-          message: 'PDF parse action executed. Add pdf parser based implementation.',
+          message:
+            'PDF parse action executed. Add pdf parser based implementation.',
         };
 
       case 'VIDEO_THUMBNAIL':
         return {
           action: payload.action,
-          message: 'Video thumbnail action executed. Add ffmpeg implementation.',
+          message:
+            'Video thumbnail action executed. Add ffmpeg implementation.',
         };
 
       case 'VIRUS_SCAN':
         return {
           action: payload.action,
-          message: 'Virus scan action executed. Add ClamAV/external scan integration.',
+          message:
+            'Virus scan action executed. Add ClamAV/external scan integration.',
         };
 
       default:

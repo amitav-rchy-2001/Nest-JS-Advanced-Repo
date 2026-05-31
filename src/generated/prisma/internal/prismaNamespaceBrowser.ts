@@ -62,7 +62,20 @@ export const ModelName = {
   Conversation: 'Conversation',
   ConversationParticipant: 'ConversationParticipant',
   Message: 'Message',
-  MessageReadReceipt: 'MessageReadReceipt'
+  MessageReadReceipt: 'MessageReadReceipt',
+  User: 'User',
+  NannyProfile: 'NannyProfile',
+  ParentProfile: 'ParentProfile',
+  Child: 'Child',
+  UserLanguage: 'UserLanguage',
+  IdentityDocument: 'IdentityDocument',
+  OtpVerification: 'OtpVerification',
+  PasswordResetToken: 'PasswordResetToken',
+  SubscriptionPlan: 'SubscriptionPlan',
+  Subscription: 'Subscription',
+  Payment: 'Payment',
+  AuthSession: 'AuthSession',
+  SignupProgress: 'SignupProgress'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -259,6 +272,204 @@ export const MessageReadReceiptScalarFieldEnum = {
 } as const
 
 export type MessageReadReceiptScalarFieldEnum = (typeof MessageReadReceiptScalarFieldEnum)[keyof typeof MessageReadReceiptScalarFieldEnum]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  phone: 'phone',
+  passwordHash: 'passwordHash',
+  googleId: 'googleId',
+  role: 'role',
+  fullName: 'fullName',
+  isEmailVerified: 'isEmailVerified',
+  isPhoneVerified: 'isPhoneVerified',
+  isActive: 'isActive',
+  profileComplete: 'profileComplete',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const NannyProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  preferredLanguage: 'preferredLanguage',
+  faceImageUrl: 'faceImageUrl',
+  accountStatus: 'accountStatus',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type NannyProfileScalarFieldEnum = (typeof NannyProfileScalarFieldEnum)[keyof typeof NannyProfileScalarFieldEnum]
+
+
+export const ParentProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  profileImageUrl: 'profileImageUrl',
+  addressLine1: 'addressLine1',
+  street: 'street',
+  postalCode: 'postalCode',
+  city: 'city',
+  state: 'state',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ParentProfileScalarFieldEnum = (typeof ParentProfileScalarFieldEnum)[keyof typeof ParentProfileScalarFieldEnum]
+
+
+export const ChildScalarFieldEnum = {
+  id: 'id',
+  parentId: 'parentId',
+  name: 'name',
+  ageRange: 'ageRange',
+  educationalDays: 'educationalDays',
+  educationalStartTime: 'educationalStartTime',
+  educationalEndTime: 'educationalEndTime',
+  wakeupTime: 'wakeupTime',
+  napWindowFrom: 'napWindowFrom',
+  napWindowTo: 'napWindowTo',
+  bedtimeFrom: 'bedtimeFrom',
+  bedtimeTo: 'bedtimeTo',
+  restrictions: 'restrictions',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ChildScalarFieldEnum = (typeof ChildScalarFieldEnum)[keyof typeof ChildScalarFieldEnum]
+
+
+export const UserLanguageScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  language: 'language',
+  isPrimary: 'isPrimary'
+} as const
+
+export type UserLanguageScalarFieldEnum = (typeof UserLanguageScalarFieldEnum)[keyof typeof UserLanguageScalarFieldEnum]
+
+
+export const IdentityDocumentScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  documentType: 'documentType',
+  documentSide: 'documentSide',
+  fileUrl: 'fileUrl',
+  fileKey: 'fileKey',
+  mimeType: 'mimeType',
+  fileSizeBytes: 'fileSizeBytes',
+  verificationStatus: 'verificationStatus',
+  verifiedAt: 'verifiedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type IdentityDocumentScalarFieldEnum = (typeof IdentityDocumentScalarFieldEnum)[keyof typeof IdentityDocumentScalarFieldEnum]
+
+
+export const OtpVerificationScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  phone: 'phone',
+  email: 'email',
+  otpCode: 'otpCode',
+  otpType: 'otpType',
+  expiresAt: 'expiresAt',
+  isUsed: 'isUsed',
+  attempts: 'attempts',
+  createdAt: 'createdAt'
+} as const
+
+export type OtpVerificationScalarFieldEnum = (typeof OtpVerificationScalarFieldEnum)[keyof typeof OtpVerificationScalarFieldEnum]
+
+
+export const PasswordResetTokenScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  token: 'token',
+  resetVia: 'resetVia',
+  expiresAt: 'expiresAt',
+  isUsed: 'isUsed',
+  createdAt: 'createdAt'
+} as const
+
+export type PasswordResetTokenScalarFieldEnum = (typeof PasswordResetTokenScalarFieldEnum)[keyof typeof PasswordResetTokenScalarFieldEnum]
+
+
+export const SubscriptionPlanScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  priceAmount: 'priceAmount',
+  currency: 'currency',
+  billingCycle: 'billingCycle',
+  features: 'features',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
+} as const
+
+export type SubscriptionPlanScalarFieldEnum = (typeof SubscriptionPlanScalarFieldEnum)[keyof typeof SubscriptionPlanScalarFieldEnum]
+
+
+export const SubscriptionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  planId: 'planId',
+  status: 'status',
+  startedAt: 'startedAt',
+  expiresAt: 'expiresAt',
+  autoRenew: 'autoRenew',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SubscriptionScalarFieldEnum = (typeof SubscriptionScalarFieldEnum)[keyof typeof SubscriptionScalarFieldEnum]
+
+
+export const PaymentScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  subscriptionId: 'subscriptionId',
+  amount: 'amount',
+  currency: 'currency',
+  paymentGateway: 'paymentGateway',
+  gatewayTransactionId: 'gatewayTransactionId',
+  gatewayPayload: 'gatewayPayload',
+  status: 'status',
+  paidAt: 'paidAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PaymentScalarFieldEnum = (typeof PaymentScalarFieldEnum)[keyof typeof PaymentScalarFieldEnum]
+
+
+export const AuthSessionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  refreshTokenHash: 'refreshTokenHash',
+  deviceInfo: 'deviceInfo',
+  ipAddress: 'ipAddress',
+  expiresAt: 'expiresAt',
+  revokedAt: 'revokedAt',
+  createdAt: 'createdAt'
+} as const
+
+export type AuthSessionScalarFieldEnum = (typeof AuthSessionScalarFieldEnum)[keyof typeof AuthSessionScalarFieldEnum]
+
+
+export const SignupProgressScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  currentStep: 'currentStep',
+  completedSteps: 'completedSteps',
+  metadata: 'metadata',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SignupProgressScalarFieldEnum = (typeof SignupProgressScalarFieldEnum)[keyof typeof SignupProgressScalarFieldEnum]
 
 
 export const SortOrder = {

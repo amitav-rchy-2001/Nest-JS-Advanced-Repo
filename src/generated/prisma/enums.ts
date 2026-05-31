@@ -9,7 +9,129 @@
 * 🟢 You can import this file directly.
 */
 
+export const UserRole = {
+  nanny: 'nanny',
+  parent: 'parent'
+} as const
+
+export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const NannyStatus = {
+  pending_verification: 'pending_verification',
+  verified: 'verified',
+  rejected: 'rejected',
+  suspended: 'suspended'
+} as const
+
+export type NannyStatus = (typeof NannyStatus)[keyof typeof NannyStatus]
+
+
+export const ChildAgeRange = {
+  new_infant: 'new_infant',
+  early_infant: 'early_infant',
+  growing_infant: 'growing_infant',
+  infant: 'infant',
+  young_toddler: 'young_toddler',
+  toddler: 'toddler',
+  early_childhood: 'early_childhood',
+  school_age_6_plus: 'school_age_6_plus'
+} as const
+
+export type ChildAgeRange = (typeof ChildAgeRange)[keyof typeof ChildAgeRange]
+
+
+export const Weekday = {
+  monday: 'monday',
+  tuesday: 'tuesday',
+  wednesday: 'wednesday',
+  thursday: 'thursday',
+  friday: 'friday'
+} as const
+
+export type Weekday = (typeof Weekday)[keyof typeof Weekday]
+
+
+export const LanguageCode = {
+  en: 'en',
+  si: 'si',
+  hi: 'hi',
+  ar: 'ar',
+  fil: 'fil'
+} as const
+
+export type LanguageCode = (typeof LanguageCode)[keyof typeof LanguageCode]
+
+
+export const DocumentType = {
+  passport: 'passport',
+  nid: 'nid'
+} as const
+
+export type DocumentType = (typeof DocumentType)[keyof typeof DocumentType]
+
+
+export const DocumentSide = {
+  front: 'front',
+  back: 'back',
+  single: 'single'
+} as const
+
+export type DocumentSide = (typeof DocumentSide)[keyof typeof DocumentSide]
+
+
+export const DocStatus = {
+  pending: 'pending',
+  approved: 'approved',
+  rejected: 'rejected'
+} as const
+
+export type DocStatus = (typeof DocStatus)[keyof typeof DocStatus]
+
+
+export const OtpType = {
+  phone_verification: 'phone_verification',
+  email_verification: 'email_verification',
+  password_reset_phone: 'password_reset_phone',
+  password_reset_email: 'password_reset_email'
+} as const
+
+export type OtpType = (typeof OtpType)[keyof typeof OtpType]
+
+
+export const ResetVia = {
+  email: 'email',
+  phone: 'phone'
+} as const
+
+export type ResetVia = (typeof ResetVia)[keyof typeof ResetVia]
+
+
+export const BillingCycle = {
+  monthly: 'monthly',
+  quarterly: 'quarterly',
+  yearly: 'yearly'
+} as const
+
+export type BillingCycle = (typeof BillingCycle)[keyof typeof BillingCycle]
+
+
+export const SubscriptionStatus = {
+  pending: 'pending',
+  active: 'active',
+  expired: 'expired',
+  cancelled: 'cancelled',
+  failed: 'failed'
+} as const
+
+export type SubscriptionStatus = (typeof SubscriptionStatus)[keyof typeof SubscriptionStatus]
+
+
+export const PaymentStatus = {
+  pending: 'pending',
+  completed: 'completed',
+  failed: 'failed',
+  refunded: 'refunded'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]

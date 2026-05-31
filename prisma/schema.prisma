@@ -229,3 +229,279 @@ model MessageReadReceipt {
   @@unique([messageId, userId])
   @@index([userId])
 }
+model User {
+  id                  String    @id @default(uuid())
+  email               String?   @unique
+  phone               String?   @unique
+  passwordHash        String?
+  googleId            String?   @unique
+  role                UserRole
+  fullName            String
+  isEmailVerified     Boolean   @default(false)
+  isPhoneVerified     Boolean   @default(false)
+  isActive            Boolean   @default(true)
+  profileComplete     Boolean   @default(false)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  nannyProfile        NannyProfile?
+  parentProfile       ParentProfile?
+  children            Child[]
+  userLanguages       UserLanguage[]
+  identityDocuments   IdentityDocument[]
+  otpVerifications    OtpVerification[]
+  passwordResets      PasswordResetToken[]
+  subscriptions       Subscription[]
+  payments            Payment[]
+  authSessions        AuthSession[]
+  signupProgress      SignupProgress?
+}
+
+enum UserRole {
+  nanny
+  parent
+}
+
+model NannyProfile {
+  id                String       @id @default(uuid())
+  userId            String       @unique
+  user              User         @relation(fields: [userId], references: [id])
+  preferredLanguage LanguageCode?
+  faceImageUrl      String?
+  accountStatus     NannyStatus  @default(pending_verification)
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+}
+
+enum NannyStatus {
+  pending_verification
+  verified
+  rejected
+  suspended
+}
+
+model ParentProfile {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id])
+  profileImageUrl String?
+  addressLine1   String?
+  street         String?
+  postalCode     String?
+  city           String?
+  state          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Child {
+  id                    String          @id @default(uuid())
+  parentId              String
+  parent                User            @relation(fields: [parentId], references: [id])
+  name                  String
+  ageRange              ChildAgeRange
+  educationalDays       Weekday[]
+  educationalStartTime  String?
+  educationalEndTime    String?
+  wakeupTime            String?
+  napWindowFrom         String?
+  napWindowTo           String?
+  bedtimeFrom           String?
+  bedtimeTo             String?
+  restrictions          String?
+  createdAt             DateTime        @default(now())
+  updatedAt             DateTime        @updatedAt
+
+  @@index([parentId])
+}
+
+enum ChildAgeRange {
+  new_infant
+  early_infant
+  growing_infant
+  infant
+  young_toddler
+  toddler
+  early_childhood
+  school_age_6_plus
+}
+
+enum Weekday {
+  monday
+  tuesday
+  wednesday
+  thursday
+  friday
+}
+
+enum LanguageCode {
+  en
+  si
+  hi
+  ar
+  fil
+}
+
+model UserLanguage {
+  id        String       @id @default(uuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  language  LanguageCode
+  isPrimary Boolean      @default(false)
+
+  @@unique([userId, language])
+}
+
+model IdentityDocument {
+  id                 String           @id @default(uuid())
+  userId             String
+  user               User             @relation(fields: [userId], references: [id])
+  documentType       DocumentType
+  documentSide       DocumentSide?
+  fileUrl            String
+  fileKey            String
+  mimeType           String?
+  fileSizeBytes      Int?
+  verificationStatus DocStatus        @default(pending)
+  verifiedAt         DateTime?
+  createdAt          DateTime         @default(now())
+}
+
+enum DocumentType {
+  passport
+  nid
+}
+enum DocumentSide {
+  front
+  back
+  single
+}
+enum DocStatus {
+  pending
+  approved
+  rejected
+}
+
+model OtpVerification {
+  id        String      @id @default(uuid())
+  userId    String?
+  user      User?       @relation(fields: [userId], references: [id])
+  phone     String?
+  email     String?
+  otpCode   String
+  otpType   OtpType
+  expiresAt DateTime
+  isUsed    Boolean     @default(false)
+  attempts  Int         @default(0)
+  createdAt DateTime    @default(now())
+}
+
+enum OtpType {
+  phone_verification
+  email_verification
+  password_reset_phone
+  password_reset_email
+}
+
+model PasswordResetToken {
+  id        String         @id @default(uuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id])
+  token     String         @unique
+  resetVia  ResetVia
+  expiresAt DateTime
+  isUsed    Boolean        @default(false)
+  createdAt DateTime       @default(now())
+}
+
+enum ResetVia {
+  email
+  phone
+}
+
+model SubscriptionPlan {
+  id           String           @id @default(uuid())
+  name         String
+  description  String?
+  priceAmount  Decimal          @db.Decimal(10, 2)
+  currency     String           @default("USD")
+  billingCycle BillingCycle
+  features     Json?
+  isActive     Boolean          @default(true)
+  createdAt    DateTime         @default(now())
+  subscriptions Subscription[]
+}
+
+enum BillingCycle {
+  monthly
+  quarterly
+  yearly
+}
+
+model Subscription {
+  id         String             @id @default(uuid())
+  userId     String
+  user       User               @relation(fields: [userId], references: [id])
+  planId     String
+  plan       SubscriptionPlan   @relation(fields: [planId], references: [id])
+  status     SubscriptionStatus @default(pending)
+  startedAt  DateTime?
+  expiresAt  DateTime?
+  autoRenew  Boolean            @default(true)
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  payments   Payment[]
+}
+
+enum SubscriptionStatus {
+  pending
+  active
+  expired
+  cancelled
+  failed
+}
+
+model Payment {
+  id                   String        @id @default(uuid())
+  userId               String
+  user                 User          @relation(fields: [userId], references: [id])
+  subscriptionId       String?
+  subscription         Subscription? @relation(fields: [subscriptionId], references: [id])
+  amount               Decimal       @db.Decimal(10, 2)
+  currency             String        @default("USD")
+  paymentGateway       String?
+  gatewayTransactionId String?       @unique
+  gatewayPayload       Json?
+  status               PaymentStatus @default(pending)
+  paidAt               DateTime?
+  createdAt            DateTime      @default(now())
+}
+
+enum PaymentStatus {
+  pending
+  completed
+  failed
+  refunded
+}
+
+model AuthSession {
+  id               String   @id @default(uuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id])
+  refreshTokenHash String
+  deviceInfo       Json?
+  ipAddress        String?
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  createdAt        DateTime @default(now())
+}
+
+model SignupProgress {
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id])
+  currentStep    Int      @default(1)
+  completedSteps Json     @default("[]")
+  metadata       Json?
+  updatedAt      DateTime @updatedAt
+}

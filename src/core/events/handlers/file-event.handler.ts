@@ -18,7 +18,9 @@ export class FileEventHandler {
   async handleFileProcessRequested(
     event: AppEvent<FileProcessRequestedPayload>,
   ): Promise<void> {
-    const processingJob = await this.fileProcessingService.createJob(event.payload);
+    const processingJob = await this.fileProcessingService.createJob(
+      event.payload,
+    );
 
     await this.queueDispatchService.addFileProcessingJob(event.payload.action, {
       ...event.payload,

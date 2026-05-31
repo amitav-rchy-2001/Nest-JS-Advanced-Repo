@@ -77,3 +77,68 @@ export type Message = Prisma.MessageModel
  * 
  */
 export type MessageReadReceipt = Prisma.MessageReadReceiptModel
+/**
+ * Model User
+ * 
+ */
+export type User = Prisma.UserModel
+/**
+ * Model NannyProfile
+ * 
+ */
+export type NannyProfile = Prisma.NannyProfileModel
+/**
+ * Model ParentProfile
+ * 
+ */
+export type ParentProfile = Prisma.ParentProfileModel
+/**
+ * Model Child
+ * 
+ */
+export type Child = Prisma.ChildModel
+/**
+ * Model UserLanguage
+ * 
+ */
+export type UserLanguage = Prisma.UserLanguageModel
+/**
+ * Model IdentityDocument
+ * 
+ */
+export type IdentityDocument = Prisma.IdentityDocumentModel
+/**
+ * Model OtpVerification
+ * 
+ */
+export type OtpVerification = Prisma.OtpVerificationModel
+/**
+ * Model PasswordResetToken
+ * 
+ */
+export type PasswordResetToken = Prisma.PasswordResetTokenModel
+/**
+ * Model SubscriptionPlan
+ * 
+ */
+export type SubscriptionPlan = Prisma.SubscriptionPlanModel
+/**
+ * Model Subscription
+ * 
+ */
+export type Subscription = Prisma.SubscriptionModel
+/**
+ * Model Payment
+ * 
+ */
+export type Payment = Prisma.PaymentModel
+/**
+ * Model AuthSession
+ * 
+ */
+export type AuthSession = Prisma.AuthSessionModel
+/**
+ * Model SignupProgress
+ * 
+ */
+export type SignupProgress = Prisma.SignupProgressModel
